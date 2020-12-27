@@ -41,6 +41,7 @@ const JobSearch = () => {
       return categoryList;
     };
     const area = updateFilters("location", "area");
+    delete area.UK;
     const contract = updateFilters("contract_type");
     const salary = {};
     Object.entries(salaryList).forEach((cur) => {
@@ -95,7 +96,7 @@ const JobSearch = () => {
       <div className="jobsearch__fields">
         <div className="job__filter">
           {Object.entries(filterList).map((cur, i) => (
-            <div key={i}>
+            <div className="filter__container" key={i}>
               <div
                 className="filter__header"
                 onClick={() =>

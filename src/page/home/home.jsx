@@ -63,11 +63,11 @@ const Home = () => {
             developing a sustainable working relationship.
           </h2>
           <div className="link-box">
-            <Link className="box" to="/im-looking">
+            <Link className="box" to="/logiciel/im-looking">
               <h2 className="secondary-header">I want to find a great job</h2>
               <button className="btn">Sign up for jobs alert</button>
             </Link>
-            <Link className="box" to="/im-hiring">
+            <Link className="box" to="/logiciel/im-hiring">
               <h2 className="secondary-header">I want to hire someone epic</h2>
               <button className="btn">Submit a vacancy</button>
             </Link>
