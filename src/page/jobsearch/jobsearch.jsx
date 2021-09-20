@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { results as data } from "../../services/data.json";
-import { Link } from "react-router-dom";
 import "./jobsearch.css";
 
 const JobSearch = () => {
@@ -8,6 +7,7 @@ const JobSearch = () => {
   const [displayResults, setDisplayResults] = useState([]);
   const [filter, setFilter] = useState({ area: [], contract: [], salary: [] });
   const [filterList, setFilterList] = useState({});
+  const [filterMobile, setFilterMobile] = useState(false);
   const [limit, setLimt] = useState("");
   const [page, setPage] = useState(1);
   const pageLimit = 10;
@@ -93,8 +93,21 @@ const JobSearch = () => {
   return (
     <div className="jobsearch">
       <h1 className="banner-header">Available jobs</h1>
+      <button
+        className="job__btn job__btn--mobile btn"
+        onClick={() => setFilterMobile((prev) => !prev)}
+      >
+        filter
+        {filterMobile ? (
+          <span className="filter__limit">&or;</span>
+        ) : (
+          <span className="filter__limit">&and;</span>
+        )}
+      </button>
       <div className="jobsearch__fields">
-        <div className="job__filter">
+        <div
+          className={`job__filter ${!filterMobile && "job__filter--m-hide"}`}
+        >
           {Object.entries(filterList).map((cur, i) => (
             <div className="filter__container" key={i}>
               <div
@@ -137,6 +150,12 @@ const JobSearch = () => {
                 )}
             </div>
           ))}
+          <button
+            className="job__btn job__btn--mobile btn job__btn--close"
+            onClick={() => setFilterMobile(false)}
+          >
+            close
+          </button>
         </div>
         <div className="job">
           {displayResults
@@ -187,7 +206,9 @@ const JobSearch = () => {
           {[...Array(Math.ceil(displayResults.length / pageLimit))].map(
             (cur, i) => (
               <div
-                className="pagination__page"
+                className={`pagination__page ${
+                  i + 1 !== page && "pagination__page--m-hide"
+                }`}
                 style={
                   i + 1 === page
                     ? { fontWeight: 900, color: "rgb(245, 81, 81)" }

@@ -1,4 +1,5 @@
 import React from "react";
+import importAll from "../../importAll";
 import "./aboutus.css";
 
 const AboutUs = () => {
@@ -6,7 +7,7 @@ const AboutUs = () => {
     <div className="">
       <h1 className="banner-header">About us</h1>
       <div className="side">
-        <img src="img/office-image-3.jpeg" alt="" className="side__about" />
+        <img src={importAll.officeImage3} alt="" className="side__about" />
         <div className="side__text-black">
           <div className="text">
             Our people. Since we launched, our people and our culture have
@@ -32,10 +33,10 @@ const AboutUs = () => {
             challenges and celebrating your wins.
           </div>
         </div>
-        <img src="img/office-image-4.jpg" alt="" className="side__about" />
+        <img src={importAll.officeImage4} alt="" className="side__about" />
       </div>
       <div className="side">
-        <img src="img/office-image-5.jpg" alt="" className="side__about" />
+        <img src={importAll.officeImage5} alt="" className="side__about" />
         <div className="side__text-black">
           <div className="text">
             We don’t just talk the talk, we walk it too. We know great

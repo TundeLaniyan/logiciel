@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import importAll from "../../importAll";
+import useMediaQuery from "../../util/useMediaQuery";
 import "./imhiring.css";
 
 const ImHiring = () => {
   const [submit, setSubmit] = useState(false);
+  const isRowBased = useMediaQuery("min-width: 56.25em");
   return (
     <div className="">
       <h1 className="banner-header">Looking to hire</h1>
@@ -11,7 +14,11 @@ const ImHiring = () => {
         back with you to discuss your opportunity further!
       </p>
       <div className="side">
-        <img src="img/office-image-2.jpg" alt="" className="form-img" />
+        <img
+          src={importAll[`officeImage2${!isRowBased ? "small" : ""}`]}
+          alt=""
+          className="form-img"
+        />
         <form
           className="register"
           onSubmit={(e) => {

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import importAll from "../../importAll";
+import useMediaQuery from "../../util/useMediaQuery";
 import "./imlooking.css";
 
 const ImLooking = () => {
   const [submit, setSubmit] = useState(false);
+  const isRowBased = useMediaQuery("min-width: 56.25em");
   return (
     <div className="">
       <h1 className="banner-header">Looking for job</h1>
@@ -45,14 +48,18 @@ const ImLooking = () => {
             <label htmlFor="keySkills">Key skills</label>
             <input type="text" id="keySkills" />
           </div>
-          <div className="form__input">
+          <div className="">
             <label htmlFor="cv">*Upload CV</label>
             <input type="file" id="cv" required />
           </div>
           <button className="btn btn--black">Submit</button>
           {submit && <div className="submit">Submiited</div>}
         </form>
-        <img src="img/office-image-2.jpg" alt="" className="form-img" />
+        <img
+          src={importAll[`officeImage2${!isRowBased ? "small" : ""}`]}
+          alt=""
+          className="form-img"
+        />
       </div>
     </div>
   );

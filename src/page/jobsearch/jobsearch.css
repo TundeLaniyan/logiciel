@@ -41,13 +41,14 @@
 .filter__number {
   margin-left: auto;
   color: rgb(184, 184, 184);
+  font-size: 1.6rem;
 }
 .filter__limit {
   float: right;
 }
 
 .job {
-  width: 85rem;
+  width: 85vw;
 }
 .job__container {
   width: 100%;
@@ -75,7 +76,7 @@
 }
 .job__body {
   display: flex;
-  height: 20rem;
+  min-height: 20rem;
 }
 .job__description {
   padding: 2.5rem 5rem;
@@ -96,10 +97,13 @@
   border-radius: 1px;
   text-transform: uppercase;
   text-decoration: none;
+  min-width: unset;
 }
-
 .job__btn:hover {
   background-color: rgb(245, 81, 81);
+}
+.job__btn--mobile {
+  display: none;
 }
 .pagination {
   display: flex;
@@ -123,4 +127,67 @@
   width: 5rem;
   border: 1px solid #dedede;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .jobsearch__fields {
+    position: relative;
+  }
+  .job {
+    width: unset;
+  }
+  .job__filter {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 12px 25px -8px rgba(255, 86, 86, 0.32);
+  }
+  .job__filter--mobile {
+    display: none;
+  }
+  .job__filter--m-hide {
+    display: none;
+  }
+  .job__btn--mobile {
+    display: unset;
+  }
+  .job__btn--close {
+    margin: 10rem 25%;
+    /* width: calc(100% - 20rem); */
+    width: 50%;
+  }
+  .filter__container {
+    max-height: 55rem;
+  }
+  .filter__number {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .pagination__page--m-hide {
+    display: none;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .job__body {
+    flex-direction: column;
+  }
+  .job__detail {
+    text-align: center;
+  }
+  .filter__label {
+    font-size: 2.5rem;
+  }
+  .job__btn--close {
+    margin: 10rem 12.5%;
+    width: 75%;
+  }
+  .register {
+    padding: 10rem 5rem;
+  }
+}
+@media only screen and (max-width: 21.875em) {
+  .filter__label {
+    font-size: 1.6rem;
+  }
 }

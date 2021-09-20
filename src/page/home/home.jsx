@@ -1,17 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import importAll from "../../importAll";
 import "./home.css";
 
 const Home = () => {
   return (
     <div className="home">
-      <div
-        className="banner-con"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, white 25%, transparent 50%), url(img/office-image.jpeg)",
-        }}
-      >
+      <div className="banner-con">
         <div className="banner-box">
           <h1 className="banner-header">
             Providing you with the best opportuniies
@@ -24,7 +19,7 @@ const Home = () => {
         </div>
       </div>
       <div className="side">
-        <img className="side__img" src="img/laptop-office.jpg" alt="" />
+        <img className="side__img" src={importAll.laptopOffice} alt="" />
         <div className="side__black">
           <h1 className="primary-header">We know our stuff.</h1>
           <p className="text">
@@ -42,14 +37,11 @@ const Home = () => {
         </div>
       </div>
       <div className="side">
-        <div className="side__white">
+        <div className="side__white side__white--home">
           <h2 className="side__white-text">FOCUSED ON</h2>
           <h2 className="side__white-text side--white-text-1">EFFECTIVENESS</h2>
         </div>
-        <div
-          className="home__action side__red"
-          // style={{ backgroundImage: "url(img/home-banner.jpg)" }}
-        >
+        <div className="home__action side__red">
           <h2 className="action-text">
             Our business has two primary concerns: placing workers in positions
             where they have an opportunity to achieve their personal goals and
@@ -63,11 +55,11 @@ const Home = () => {
             developing a sustainable working relationship.
           </h2>
           <div className="link-box">
-            <Link className="box" to="/logiciel/im-looking">
+            <Link className="box" to="/im-looking">
               <h2 className="secondary-header">I want to find a great job</h2>
               <button className="btn">Sign up for jobs alert</button>
             </Link>
-            <Link className="box" to="/logiciel/im-hiring">
+            <Link className="box" to="/im-hiring">
               <h2 className="secondary-header">I want to hire someone epic</h2>
               <button className="btn">Submit a vacancy</button>
             </Link>

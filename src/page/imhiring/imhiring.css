@@ -1,6 +1,5 @@
-form {
+/* form {
   background-color: rgb(255, 71, 71);
-  /* margin: 8rem auto; */
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -28,5 +27,4 @@ textarea {
 }
 label {
   color: white;
-  font-size: 1.5rem;
-}
+} */

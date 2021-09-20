@@ -12,3 +12,16 @@
   padding: 4rem;
   background-color: rgb(255, 71, 71);
 }
+
+@media only screen and (max-width: 56.25em) {
+  .side__about {
+    width: 100%;
+    order: -1;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .side__text-black,
+  .side__text-red {
+    padding: 3rem 0rem;
+  }
+}

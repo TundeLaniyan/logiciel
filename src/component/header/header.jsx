@@ -1,32 +1,33 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import importAll from "../../importAll";
 import "./header.css";
 
 const Header = () => {
   const [mobile, setMobile] = useState(false);
   const handleMenu = () => {
-    // x.classList.toggle("change");
     setMobile((prev) => !prev);
   };
+
   return (
     <header>
-      <Link to="/logiciel/" className="logo-container">
-        <img className="logo" src="img/logo.png" />
+      <Link to="/" className="logo-container">
+        <img className="logo" alt="logiciel" src={importAll.logo} />
         <p className="logo-text">Logiciel solution</p>
       </Link>
-      <Link className="desktop" to="/logiciel/">
+      <Link className="desktop" to="/">
         Home
       </Link>
-      <Link className="desktop" to="/logiciel/jobsearch">
+      <Link className="desktop" to="/jobsearch">
         Job search
       </Link>
-      <Link className="desktop" to="/logiciel/im-looking">
+      <Link className="desktop" to="/im-looking">
         Looking for work
       </Link>
-      <Link className="desktop" to="/logiciel/im-hiring">
+      <Link className="desktop" to="/im-hiring">
         Submit a vacancy
       </Link>
-      <Link className="desktop" to="/logiciel/about-us">
+      <Link className="desktop" to="/about-us">
         About us
       </Link>
       {/* <div className="header__btn mobile">&nbsp;</div> */}
@@ -40,38 +41,34 @@ const Header = () => {
       </div>
       {mobile && (
         <div className={`header__mobile ${mobile && "change"}`}>
-          <Link
-            className="desktop"
-            onClick={() => setMobile(false)}
-            to="/logiciel/"
-          >
+          <Link className="desktop" onClick={() => setMobile(false)} to="/">
             Home
           </Link>
           <Link
             className="desktop"
             onClick={() => setMobile(false)}
-            to="/logiciel/jobsearch"
+            to="/jobsearch"
           >
             Job search
           </Link>
           <Link
             className="desktop"
             onClick={() => setMobile(false)}
-            to="/logiciel/im-looking"
+            to="/im-looking"
           >
             Looking for work
           </Link>
           <Link
             className="desktop"
             onClick={() => setMobile(false)}
-            to="/logiciel/im-hiring"
+            to="/im-hiring"
           >
             Submit a vacancy
           </Link>
           <Link
             className="desktop"
             onClick={() => setMobile(false)}
-            to="/logiciel/about-us"
+            to="/about-us"
           >
             About us
           </Link>
